@@ -19,15 +19,4 @@ class Post extends Model
     public function user(){
         return $this->belongsto('App\Models\User');
     }
-
-    public function photos(){
-        return $this->morphMany('App\Models\Photo', 'imagable');
-    }
-
-    public function tags(){
-        return $this->morphedByMany('App\Models\Tag', 'taggable');
-    }
-
-    public function videos(){
-        return $this->morphedByMany('App\Models\Video', 'taggable');
-    }
+}

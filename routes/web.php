@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Postcontroller;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\StaffsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,9 +26,9 @@ Route::get('/admin-login', function () {
     return view('layouts.auth.login');
 });
 
-Route::get('/admin-signup', function () {
-    return view('layouts.auth.signup');
-});
+// Route::get('/admin-signup', function () {
+//     return view('layouts.auth.signup');
+// });
 
 Route::get('/password-reset', function () {
     return view('layouts.auth.password-reset');
@@ -35,14 +36,6 @@ Route::get('/password-reset', function () {
 
 Route::get('/new-password', function () {
     return view('layouts.auth.new-password');
-});
-
-Route::get('/admin-allmembers', function () {
-    return view('layouts.account.all-members');
-});
-
-Route::get('/admin-adduser', function () {
-    return view('layouts.account.addUser');
 });
 
 Route::get('/admin-singleuser', function () {
@@ -61,6 +54,10 @@ Route::get('/admin-dashboard/clock-in-portal', function () {
 
 Route::get('/admin-dashboard/clock-in-portal/holidays', function () {
     return view('layouts.clock-in-portal.holidays');
+});
+
+Route::get('/admin-dashboard/clock-in-portal/addholiday', function () {
+    return view('layouts.clock-in-portal.addholiday');
 });
 
 Route::get('/admin-dashboard/clock-in-portal/holiday-listing', function () {
@@ -87,29 +84,20 @@ Route::get('/admin-dashboard/clock-in-portal/designation', function () {
     return view('layouts.clock-in-portal.designation');
 });
 
+Route::get('/admin-allmembers', [StaffsController::class, 'index']);
+Route::get('/add-staff', [StaffsController::class, 'create']);
+Route::post('/add-staff', [StaffsController::class, 'store']);
+Route::get('/edit-staff/{id}', [StaffsController::class, 'edit']);
+Route::put('/update-staff/{id}', [StaffsController::class, 'update']);
+Route::get('/delete-staff/{id}', [StaffsController::class, 'delete']);
+// Route::put('/delete-staff/{id}', [StaffsController::class, 'destroy']);
+
 
 Route::get('/register', [RegistrationController::class, 'index']);
-
 Route::post('/register', [RegistrationController::class, 'register'])->name("test");
 
 
-// Route::get('/about', function(){
-//     echo "welcome to about page";
-// });
 
-// Route::get('/contact', function(){
-
-// return "You can contact us here with the given number.";
-// });
-
-
-// Route::get('/', function(){
-//     return view('home');
-// });
-
-// Route::get('/contacts', function(){
-//     return view('contacts');
-// });
 
 // Route::get('/post/{id}', function($id){
 //     return "This is post number". $id;

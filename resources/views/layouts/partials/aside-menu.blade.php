@@ -111,7 +111,7 @@
                     </span>
                     <div class="menu-sub menu-sub-accordion menu-active-bg">
                         <div class="menu-item">
-                            <a class="menu-link" href="{{ url('admin-dashboard/clock-in-portal/staffs') }}">
+                            <a class="menu-link" href="{{ url('/admin-allmembers') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -119,7 +119,7 @@
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="{{ url('/admin-adduser') }}">
+                            <a class="menu-link" href="{{ url('add-staff') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>

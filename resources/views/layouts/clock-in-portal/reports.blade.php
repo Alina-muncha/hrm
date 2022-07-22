@@ -74,7 +74,7 @@
 												<!--begin::Actions-->
                                                 <div class="d-flex align-items-center gap-2 gap-lg-3">
                                                     <!--begin::Primary button-->
-                                                    <a href="../../demo1/dist/.html" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_create_app">Get report</a>
+                                                    <a href="" class="btn btn-sm btn-primary" >Get report</a>
                                                     <!--end::Primary button-->
                                                 </div>
                                                 <!--end::Actions-->
