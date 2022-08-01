@@ -44,7 +44,7 @@
 								<!--begin::Actions-->
 								<div class="d-flex align-items-center gap-2 gap-lg-3">
 									<!--begin::Primary button-->
-									<a href="{{ url('add-staff') }}," class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_create_app">Create holiday list</a>
+									<a href="{{ url('/add-holiday') }}" class="btn btn-sm btn-primary">Create holiday list</a>
 									<!--end::Primary button-->
 								</div>
 								<!--end::Actions-->
@@ -53,7 +53,7 @@
 						</div>
 						<!--end::Toolbar-->
 						<!--begin::Post-->
-						<div class="post d-flex flex-column-fluid" id="kt_post">
+						<div class="post d-flex flex-column-fluid">
 							<!--begin::Container-->
 							<div id="kt_content_container" class="container-xxl">
 								<!--begin::Products-->

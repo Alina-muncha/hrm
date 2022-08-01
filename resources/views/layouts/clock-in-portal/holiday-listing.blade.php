@@ -80,67 +80,39 @@
 											<!--end::Table head-->
 											<!--begin::Table body-->
 											<tbody class="fw-bold text-gray-600">
+												@foreach ($holidays as $item)
 												<!--begin::Table row-->
 												<tr>
 													<!--begin::Order ID=-->
 													<td data-kt-ecommerce-order-filter="order_id">
-														<a class="text-gray-500 text-hover-primary fw-bolder">1</a>
+														<a class="text-gray-500 text-hover-primary fw-bolder">{{ $item->id }}</a>
 													</td>
 													<!--end::Order ID=-->
 													<!--begin::Customer=-->
 													<td>
 														<div class="d-flex align-items-center">
 																<!--begin::Title-->
-																<a class="text-gray-500 text-hover-primary fs-5 ">Buddha Jayanti</a>
+																<a class="text-gray-500 text-hover-primary fs-5 ">{{ $item->holiday_name }}</a>
 																<!--end::Title-->
 														</div>
 													</td>
 													<!--end::Customer=-->
 													<!--begin::Date Added=-->
 													<td class="text-start" data-order="2022-02-10">
-														<span class="fw-bolder">10/02/2022 - 12/02/2022</span>
+														<span class="fw-bolder">{{ $item->start_date }} - {{ $item->end_date }}</span>
 													</td>
 													<!--end::Date Added=-->
 													<!--begin::Date Modified=-->
 													<td>
 														<div class="d-flex align-items-left">
-																<a class="text-gray-500 text-hover-primary fs-5">3 days</a>
+																<a class="text-gray-500 text-hover-primary fs-5">{{ $item->total_days }}</a>
 														</div>
 													</td>
 													<!--end::Date Modified=-->
 												</tr>
 												<!--end::Table row-->
-												<!--begin::Table row-->
-												<tr>
-													<!--begin::Order ID=-->
-													<td data-kt-ecommerce-order-filter="order_id">
-														<a class="text-gray-500 text-hover-primary fw-bolder">2</a>
-													</td>
-													<!--end::Order ID=-->
-													<!--begin::Customer=-->
-													<td>
-														<div class="d-flex align-items-center">
-																<!--begin::Title-->
-																<a class="text-gray-500 text-hover-primary fs-5">GaiJatra</a>
-																<!--end::Title-->
-														</div>
-													</td>
-													<!--end::Customer=-->
-													<!--begin::Date Added=-->
-													<td class="text-start" data-order="2022-02-10">
-														<span class="fw-bolder">02/02/2022</span>
-													</td>
-													<!--end::Date Added=-->
-													<!--begin::Date Modified=-->
-													<td>
-														<div class="d-flex align-items-left">
-																<a class="text-gray-500 text-hover-primary fs-5">1 day</a>
-														</div>
-													</td>
-													<!--end::Date Modified=-->
-												</tr>
-												<!--end::Table row-->
-												
+												@endforeach
+											
 											</tbody>
 											<!--end::Table body-->
 										</table>

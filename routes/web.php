@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Postcontroller;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\StaffsController;
+use App\Http\Controllers\HolidayController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +16,6 @@ use App\Http\Controllers\StaffsController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-require_once('admin.php');
 
 
 Route::get('/', function () {
@@ -52,17 +52,17 @@ Route::get('/admin-dashboard/clock-in-portal', function () {
     return view('layouts.clock-in-portal.clock-in-portal');
 });
 
-Route::get('/admin-dashboard/clock-in-portal/holidays', function () {
-    return view('layouts.clock-in-portal.holidays');
-});
+// Route::get('/admin-dashboard/clock-in-portal/holidays', function () {
+//     return view('layouts.clock-in-portal.holidays');
+// });
 
-Route::get('/admin-dashboard/clock-in-portal/addholiday', function () {
-    return view('layouts.clock-in-portal.addholiday');
-});
+// Route::get('/admin-dashboard/clock-in-portal/addholiday', function () {
+//     return view('layouts.clock-in-portal.addholiday');
+// });
 
-Route::get('/admin-dashboard/clock-in-portal/holiday-listing', function () {
-    return view('layouts.clock-in-portal.holiday-listing');
-});
+// Route::get('/admin-dashboard/clock-in-portal/holiday-listing', function () {
+//     return view('layouts.clock-in-portal.holiday-listing');
+// });
 
 Route::get('/admin-dashboard/clock-in-portal/reports', function () {
     return view('layouts.clock-in-portal.reports');
@@ -92,10 +92,15 @@ Route::put('/update-staff/{id}', [StaffsController::class, 'update']);
 Route::get('/delete-staff/{id}', [StaffsController::class, 'delete']);
 // Route::put('/delete-staff/{id}', [StaffsController::class, 'destroy']);
 
-
 Route::get('/register', [RegistrationController::class, 'index']);
 Route::post('/register', [RegistrationController::class, 'register'])->name("test");
 
+Route::get('/admin-dashboard/clock-in-portal/holidays', [HolidayController::class, 'index']);
+Route::get('/add-holiday', [HolidayController::class, 'create']);
+Route::post('/add-holiday', [HolidayController::class, 'store']);
+// Route::get('/edit-holiday/{id}', [HolidayController::class, 'edit']);
+// Route::put('/update-holiday/{id}', [HolidayController::class, 'update']);
+// Route::get('/delete-holiday/{id}', [HolidayController::class, 'delete']);
 
 
 
